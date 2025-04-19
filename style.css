@@ -1,0 +1,499 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.bg-hero {
+  background: url('background.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+.bg-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  z-index: 1000;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #000000 !important;
+  transition: color 0.3s ease;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  row-gap: 10px;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.btn-custom {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+/* Mobile Menu Blur */
+.mobile-menu.show {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: 30px;
+  }
+}
+
+/* General Container Styling */
+.container {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container.py-5 {
+  width: 100%;
+  padding: 3rem 1.5rem;
+}
+
+.container .lead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 400;
+}
+
+.text-body-emphasis {
+  color: #212529;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Feature Section Styling */
+.feature-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: white;
+}
+
+/* Service Card Styling */
+.service-card {
+  background: white;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+h2.fw-normal {
+  padding-top: 25px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.row p {
+  font-size: 1rem;
+  color: black;
+  line-height: 1.6;
+}
+
+img.rounded-circle {
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover img.rounded-circle {
+  transform: scale(1.1);
+}
+
+/* Why Arihant Section */
+.info-section {
+  background: url('section_background.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 60px 0;
+  color: #fff;
+}
+
+.info-section .container,
+.info-section .row {
+  position: relative;
+  z-index: 1;
+}
+
+.info-section h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.info-section img {
+  border-radius: 10px;
+}
+
+.info-section p.lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Team Section */
+ /* Section Styling */
+ .our-team-block {
+  background-color: #ffffff;
+}
+
+.team-section-title {
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+/* Card Styling */
+.team-profile-card {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 1rem;
+  opacity: 0; /* Start hidden for animation */
+  animation: teamFadeUp 0.8s ease forwards;
+}
+
+.team-profile-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-profile-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.team-profile-body h5 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.team-profile-body p {
+  margin: 0;
+}
+
+/* Animation Keyframes */
+@keyframes teamFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Delays */
+.team-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.team-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.team-delay-3 {
+  animation-delay: 0.6s;
+}
+
+.team-delay-4 {
+  animation-delay: 0.8s;
+}
+
+/* Responsive Handling */
+@media (max-width: 991.98px) {
+  .row-cols-lg-2 > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .team-profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-profile-card img {
+    margin: 0 0 1rem 0;
+  }
+}
+
+/* patners section */
+/* Adjust carousel and logos */
+.carousel-item {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust based on the desired height */
+}
+
+.logo-slide {
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0 15px; /* Space between logos */
+  object-fit: contain;
+}
+
+/* Optional: Adjust carousel controls */
+.carousel-control-prev, .carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 15px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+
+/* FORM SECTION */
+/* FORM SECTION */
+/* Container */
+.form-wrapper {
+  max-width: 900px;
+  margin: 50px auto -80px; /* Footer ke upar overlap */
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* ABOVE footer */
+  position: relative; /* z-index ke liye required */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+.contactus-head {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contactus-subhead {
+  font-size: 16px;
+  text-align: center;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* Grid layout */
+.responsive-container-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Input block styling */
+.responsive-cell-block {
+  flex: 1 1 45%;
+  min-width: 250px;
+}
+
+.input-title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Inputs and Textarea */
+.input,
+.textinput {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.textinput:focus {
+  border-color: #007bff;
+  background-color: #fff;
+}
+
+/* Full-width textarea */
+.textinput {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.submit-btn {
+  display: block;
+  width: 200px;
+  margin: 30px auto 0;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* FOOTER SECTION */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 120px 40px 60px;
+  gap: 40px;
+  z-index: 1;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* 🎨 Gradient Background (similar to image) */
+  background: linear-gradient(135deg, #7b2ff7, #f107a3, #6e00ff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+
+  color: white;
+}
+
+/* 🔄 Gradient Animation for subtle movement */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Footer Logo and Company Info */
+.footer aside {
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.footer aside svg {
+  fill: #2563eb;
+  margin-bottom: 15px;
+}
+
+.footer aside p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Footer Navigation Columns */
+.footer nav {
+  flex: 1 1 150px;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+/* Footer Links */
+.link {
+  display: block;
+  color: #070707;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px;
+  }
+
+  .footer nav {
+    margin-top: 20px;
+  }
+
+  .footer aside {
+    margin-bottom: 30px;
+  }
+}
+
+
+
