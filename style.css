@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body, html {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@ body, html {
 }
 
 .bg-hero {
-  background: url('background.jpg') no-repeat center center;
+  background: url('img/background.jpg') no-repeat center center;
   background-size: cover;
   position: relative;
   color: white;
@@ -162,7 +162,7 @@ img.rounded-circle {
 
 /* Why Arihant Section */
 .info-section {
-  background: url('section_background.jpg') no-repeat center center;
+  background: url('img/section_background.jpg') no-repeat center center;
   background-size: cover;
   padding: 60px 0;
   color: #fff;
